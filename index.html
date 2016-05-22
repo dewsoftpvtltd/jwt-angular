@@ -1,0 +1,24 @@
+<html>
+    <head>
+    <title>Simple Angular Auth</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.5/angular.min.js"></script>
+        <script src="app.js"></script>
+  </head>
+    <body ng-app="app" ng-controller="Main as main">
+    <h1>Simple Angular Auth - Thinkster</h1>
+<div  ng-hide="main.isAuthed()">
+    <input type="text" ng-model="main.username" placeholder="username" ng-hide="main.isAuthed()">
+    <input type="password" ng-model="main.password" placeholder="password" ng-hide="main.isAuthed()">
+    </div>
+<div  ng-hide="main.isAuthed()">
+    <button ng-click="main.register()" ng-hide="main.isAuthed()">Register</button>
+    <button ng-click="main.login()" ng-hide="main.isAuthed()">Login</button></div>
+   <div> <button ng-click="main.logout()" ng-show="main.isAuthed()">Logout</button>
+
+    <button ng-click="main.getQuote()"  ng-show="main.isAuthed()">get quote</button></div>
+  <div style="color:red; font-size: 40px; text-align: center;"  ng-show="main.isAuthed()">
+    {{main.message}}
+</div>
+
+    </body>
+</html>
